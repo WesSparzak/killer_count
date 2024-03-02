@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Killer Count</title>
+</head>
+<body>
+    <h1>Killer Count</h1>
+    <div class="killer-container">
+        {% for killer in killers %}
+            {% if forloop.counter0|divisibleby:3 %}
+                <div class="killer-row">
+            {% endif %}
+            <div class="killer-cell">
+                <img src="{% static 'killerapp/images/' %}{{ killer.id }}.png" alt="{{ killer.name }}">
+                <p>Love Counter: {{ killer.counter }}</p>
+                    <a href="{% url 'update_counter' killer.id %}"><button>+1 Love</button></a>
+            </div>
+            {% if forloop.counter|divisibleby:3 or forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
+
+
+{% comment %} {{ killer.id }}.jpg" alt="{{ killer.name }} {% endcomment %}

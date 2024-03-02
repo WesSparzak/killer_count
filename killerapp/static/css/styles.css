@@ -1,0 +1,190 @@
+h1 {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bolder;
+}
+
+/* Container for the image table */
+.killer-container {
+    display: table;
+    width: auto;
+    border-collapse: collapse;
+}
+
+/* Set the rows for the table */
+.killer-row {
+    display: table-row;
+}
+
+/* Define cells to hold each image and its details */
+.killer-cell {
+    display: table-cell;
+    width: 30%;
+    /* 100% / 6 columns */
+    text-align: center;
+    /* Center content within cells */
+    vertical-align: top;
+    /* Align images to the top */
+    padding: 15px;
+}
+
+/* Style the images */
+.killer-cell img {
+    width: 50%;
+    /* Ensure images fill the cell */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 0;
+    /* Remove default margins */
+    padding: 0px;
+    /* Add padding for spacing */
+    border: 4px solid #8e0909;
+    /* Add a border (optional) */
+}
+
+/* Style the "Counter" text */
+.killer-cell p {
+    margin: 0;
+    /* Remove default margins */
+    font-weight: bold;
+    /* Make counter text bold */
+}
+
+/* Style the "Increment Counter" killer-cell button (optional) */
+.killer-cell a {
+    text-decoration: none;
+    /* Remove underline from killer-cell button */
+    color: #000;
+    /* Ensure killer-cell button text is visible */
+}
+
+*/ img {
+    width: 50px;
+    /* Set a fixed width */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+/* CSS */
+.killer-cell button,
+.killer-cell button:after {
+    width: 60px;
+    /* 60% of 150px = 90px */
+    height: 30.4px;
+    /* 60% of 76px = 45.6px (rounded to 30.4px) */
+    font-size: 12px;
+    /* 60% of 20px = 12px (rounded to 8px) */
+    line-height: 31.2px;
+    /* 60% of 78px = 46.8px (rounded to 31.2px) */
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: bolder;
+    background: linear-gradient(45deg, transparent 5%, #FF013C 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px #00E6F6;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.killer-cell button:after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+
+    content: 'OR HATE';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+    text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+    clip-path: var(--slice-0);
+}
+
+.killer-cell button:hover:after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+    0% {
+        clip-path: var(--slice-1);
+        transform: translate(-20px, -10px);
+    }
+
+    10% {
+        clip-path: var(--slice-3);
+        transform: translate(10px, 10px);
+    }
+
+    20% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 10px);
+    }
+
+    30% {
+        clip-path: var(--slice-3);
+        transform: translate(0px, 5px);
+    }
+
+    40% {
+        clip-path: var(--slice-2);
+        transform: translate(-5px, 0px);
+    }
+
+    50% {
+        clip-path: var(--slice-3);
+        transform: translate(5px, 0px);
+    }
+
+    60% {
+        clip-path: var(--slice-4);
+        transform: translate(5px, 10px);
+    }
+
+    70% {
+        clip-path: var(--slice-2);
+        transform: translate(-10px, 10px);
+    }
+
+    80% {
+        clip-path: var(--slice-5);
+        transform: translate(20px, -10px);
+    }
+
+    90% {
+        clip-path: var(--slice-1);
+        transform: translate(-10px, 0px);
+    }
+
+    100% {
+        clip-path: var(--slice-1);
+        transform: translate(0);
+    }
+}
+
+@media (min-width: 768px) {
+
+    .killer-cell button,
+    .killer-cell button:after {
+        width: 80px;
+        /* 60% of 200px */
+        height: 34.4px;
+        /* 60% of 86px (rounded) */
+        line-height: 35.2px;
+        /* 60% of 88px (rounded) */
+    }
+}
+
+body {
+    background-color: darkslategray
+}
